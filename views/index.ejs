@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Letters</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <style>
+    body {
+    
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 4.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    color:rgb(231, 157, 55);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: orange;
+  }
+  </style>
+</head>
+
+<body>
+  <!-- Write your code here -->
+  <% if (locals.numberOfLetters) { %>
+    <h1>There are <%=numberOfLetters%> letters in your name.</h1>
+    <% } else { %>
+      <h1>Enter your name below 👇</h1>
+      <% } %>
+  
+  <form action="/submit" method="POST">
+    <input type="text" name="fName" placeholder="First name">
+    <input type="text" name="lName" placeholder="Last name">
+    <input type="submit" value="OK">
+  </form>
+</body>
+
+</html>
